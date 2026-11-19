@@ -1,0 +1,196 @@
+{
+  "ngspice": {
+    "name": "Ngspice",
+    "description": "Circuit simulation engine used by eSim",
+    "homepage": "https://ngspice.sourceforge.io",
+    "binary": "ngspice",
+    "version_cmd": [
+      "ngspice",
+      "--version"
+    ],
+    "version_regex": "ngspice[- ](\\d+(?:\\.\\d+)*)",
+    "min_version": "36",
+    "recommended_version": "42",
+    "packages": {
+      "apt": "ngspice",
+      "dnf": "ngspice",
+      "pacman": "ngspice",
+      "brew": "ngspice"
+    },
+    "search_paths": {
+      "windows": [
+        "C:\\Spice64\\bin\\ngspice_con.exe",
+        "C:\\Spice64\\bin\\ngspice.exe",
+        "C:\\Program Files\\Spice64\\bin\\ngspice_con.exe",
+        "C:\\Program Files\\Spice64\\bin\\ngspice.exe",
+        "C:\\Spice\\bin\\ngspice_con.exe",
+        "C:\\Spice\\bin\\ngspice.exe",
+        "%LOCALAPPDATA%\\Programs\\Spice64\\bin\\ngspice_con.exe"
+      ],
+      "darwin": [
+        "/opt/homebrew/bin/ngspice",
+        "/usr/local/bin/ngspice"
+      ]
+    },
+    "fallback_probes": [
+      {
+        "binary": "ngspice",
+        "version_cmd": [
+          "ngspice",
+          "-v"
+        ]
+      },
+      {
+        "binary": "ngspice_con",
+        "version_cmd": [
+          "ngspice_con",
+          "--version"
+        ]
+      }
+    ]
+  },
+  "kicad": {
+    "name": "KiCad",
+    "description": "Schematic capture and PCB design",
+    "homepage": "https://www.kicad.org",
+    "binary": "kicad-cli",
+    "version_cmd": [
+      "kicad-cli",
+      "version"
+    ],
+    "version_regex": "(\\d+\\.\\d+(?:\\.\\d+)*)",
+    "min_version": "6.0",
+    "recommended_version": "8.0",
+    "packages": {
+      "apt": "kicad",
+      "dnf": "kicad",
+      "pacman": "kicad",
+      "brew": "cask:kicad",
+      "choco": "kicad",
+      "winget": "KiCad.KiCad"
+    },
+    "search_paths": {
+      "windows": [
+        "C:\\Program Files\\KiCad\\*\\bin\\kicad-cli.exe",
+        "C:\\Program Files (x86)\\KiCad\\*\\bin\\kicad-cli.exe"
+      ],
+      "darwin": [
+        "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli"
+      ]
+    },
+    "fallback_probes": [
+      {
+        "binary": "kicad",
+        "version_cmd": [
+          "kicad",
+          "--version"
+        ],
+        "search_paths": {
+          "windows": [
+            "C:\\Program Files\\KiCad\\*\\bin\\kicad.exe",
+            "C:\\Program Files (x86)\\KiCad\\*\\bin\\kicad.exe"
+          ],
+          "darwin": [
+            "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad"
+          ]
+        }
+      }
+    ]
+  },
+  "ghdl": {
+    "name": "GHDL",
+    "description": "VHDL simulator (NGHDL mixed-signal flow)",
+    "homepage": "https://github.com/ghdl/ghdl",
+    "required": false,
+    "binary": "ghdl",
+    "version_cmd": [
+      "ghdl",
+      "--version"
+    ],
+    "version_regex": "GHDL\\s+(\\d+(?:\\.\\d+)*)",
+    "min_version": "0.37",
+    "packages": {
+      "apt": "ghdl",
+      "dnf": "ghdl",
+      "pacman": "ghdl",
+      "brew": "ghdl",
+      "choco": "ghdl"
+    }
+  },
+  "verilator": {
+    "name": "Verilator",
+    "description": "Verilog simulator (Verilog-to-Ngspice flow)",
+    "homepage": "https://www.veripool.org/verilator",
+    "required": false,
+    "binary": "verilator",
+    "version_cmd": [
+      "verilator",
+      "--version"
+    ],
+    "version_regex": "Verilator\\s+(\\d+(?:\\.\\d+)*)",
+    "min_version": "4.0",
+    "packages": {
+      "apt": "verilator",
+      "dnf": "verilator",
+      "pacman": "verilator",
+      "brew": "verilator"
+    }
+  },
+  "pyqt5": {
+    "name": "PyQt5",
+    "kind": "pip",
+    "description": "eSim GUI toolkit",
+    "min_version": "5.12",
+    "packages": {
+      "pip": "PyQt5"
+    }
+  },
+  "matplotlib": {
+    "name": "matplotlib",
+    "kind": "pip",
+    "description": "Waveform plotting",
+    "min_version": "3.0",
+    "packages": {
+      "pip": "matplotlib"
+    }
+  },
+  "numpy": {
+    "name": "numpy",
+    "kind": "pip",
+    "description": "Numerical arrays",
+    "min_version": "1.16",
+    "packages": {
+      "pip": "numpy"
+    }
+  },
+  "scipy": {
+    "name": "scipy",
+    "kind": "pip",
+    "description": "Scientific computing",
+    "min_version": "1.2",
+    "packages": {
+      "pip": "scipy"
+    },
+    "requires": [
+      "numpy"
+    ]
+  },
+  "watchdog": {
+    "name": "watchdog",
+    "kind": "pip",
+    "description": "File-system monitoring",
+    "required": false,
+    "packages": {
+      "pip": "watchdog"
+    }
+  },
+  "hdlparse": {
+    "name": "hdlparse",
+    "kind": "pip",
+    "description": "HDL parsing for NGHDL",
+    "required": false,
+    "packages": {
+      "pip": "hdlparse"
+    }
+  }
+}

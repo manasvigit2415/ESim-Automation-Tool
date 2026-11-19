@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "esim-tool-manager"
+version = "0.1.0"
+description = "Automated Tool Manager for eSim: install, check, update and configure external EDA tools"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = []          # standard library only
+
+[project.scripts]
+esim-tm = "esim_tool_manager.cli:main"
+
+[project.gui-scripts]
+esim-tm-gui = "esim_tool_manager.gui:main"
+
+[tool.setuptools.packages.find]
+include = ["esim_tool_manager*"]
+
+[tool.setuptools.package-data]
+esim_tool_manager = ["data/*.json"]
